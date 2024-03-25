@@ -1,0 +1,22 @@
+org: sharmadiksha19
+app: aws-python-project
+service: aws-python-project
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: python3.9
+lambdaHashingVersion: 20201221
+region: eu-west-1
+timeout: 10 # You set a timeout of 10 seconds for the functions
+role: arn:aws:iam::677273684098:role/ServerlessRole # Enter your Arn role here
+memorySize: 512
+
+functions:
+  first_function:
+    handler: handler.first_function
+    events:
+    - http:
+        path: first
+        method: get   
